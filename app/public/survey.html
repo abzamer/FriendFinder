@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Survey</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+    <div class="container">
+    
+        <div class="card-body">
+            <h2>Survey Questions</h2><hr>
+            <form role="form">
+                <div class="form-group">
+                    <h3><strong>About You</strong></h3>
+                    <label for="reserve-name">Name (Required)</label>
+                    <input type="text" class="form-control" id="reserve-name">
+                </div>
+                <div class="form-group">
+                    <label for="photo">Link to Photo Image (Required)</label>
+                    <input type="text" class="form-control" id="photo">
+                </div>
+                <hr>
+
+                <div class="form-group">
+                    <h3><strong>Question 1</strong></h3>
+                    <label for="questions">You enjoy a hot cup of coffee on a cold day.</label>                
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Select an Option
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item">1</a>
+                            <a class="dropdown-item">2</a>
+                            <a class="dropdown-item">3</a>
+                            <a class="dropdown-item">4</a>
+                            <a class="dropdown-item">5</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary submit">Submit</button>
+            </form>
+        </div>
+    
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/friends">API Friends List</a> |
+                    <a href="https://github.com/abzamer/FriendFinder">GitHub Repo</a>
+            </div>
+        </footer>
+    
+    </div>
+</body>
+</html>
