@@ -1,5 +1,5 @@
 //A GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
-app.get()
+app.get("/api/friends", )
 
 
 
