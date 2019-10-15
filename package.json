@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Find a friend",
   "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
