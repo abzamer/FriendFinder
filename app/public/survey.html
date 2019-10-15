@@ -111,6 +111,15 @@
 </html>
 
 <script type="text/javascript">
+//function will remove phrase from 1 & 5
+function cleanUp(answer){
+    if(answer === "1(Strongly Disagree)"){
+        return 1;
+    } if (answer === "5(Strongly Agree)"){
+        return 5;
+    } return answer;
+};
+
  $(".submit").on("click", function(event) {
     event.preventDefault();
 
@@ -118,11 +127,11 @@
     var newFriend = {
       name: $("#name").val().trim(),
       photo: $("#photo").val().trim(),
-      questions1: $("#options1").val().trim(),
-      questions2: $("#options2").val().trim(),
-      questions3: $("#options3").val().trim(),
-      questions4: $("#options4").val().trim(),
-      questions5: $("#options5").val().trim(),
+      questions1: cleanUp($("#options1").val().trim()),
+      questions2: cleanUp($("#options2").val().trim()),
+      questions3: cleanUp($("#options3").val().trim()),
+      questions4: cleanUp($("#options4").val().trim()),
+      questions5: cleanUp($("#options5").val().trim()),
     };
 
     console.log(newFriend);
@@ -144,10 +153,6 @@
         $("#name").val("");
         $("#photo").val("");
         $("#options").val("");
-
       });
-
   });
-
-
 </script>
