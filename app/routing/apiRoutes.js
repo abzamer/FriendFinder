@@ -8,11 +8,19 @@ app.get("/api/friends", function(req, res){
 });
 
 //A POST routes /api/friends. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
+function totalDifference(friend1, newFriend){
+    var totalDifference = 0;
+    for(var i=0; i < friend1.scores.length; i++){
+        totalDifference += Math.abs(friend1.scores[i] - newFriend.scores[i]);
+    } return totalDifference;
+}
+
+//
 app.post("/api/friends", function(req, res) {
+    var newFriend = req.body;
+    var mostCompatibleIndex = 0;
+    var lowDifference = Number.MAX_SAFE_INTEGER
     friendsData.push(req.body);
     console.log("I'm in the friends post!");
-
-//     console.log("here's what i have: " + req.body.name);
-//     res.json(friendsData.friendsArray);
 })
 }
