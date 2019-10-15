@@ -117,7 +117,7 @@ function cleanUp(answer){
         return 1;
     } if (answer === "5(Strongly Agree)"){
         return 5;
-    } return answer;
+    } return parseInt(answer);
 };
 
  $(".submit").on("click", function(event) {
@@ -127,6 +127,7 @@ function cleanUp(answer){
     var newFriend = {
       name: $("#name").val().trim(),
       photo: $("#photo").val().trim(),
+      scores: [1, 2, 3],
       questions1: cleanUp($("#options1").val().trim()),
       questions2: cleanUp($("#options2").val().trim()),
       questions3: cleanUp($("#options3").val().trim()),
