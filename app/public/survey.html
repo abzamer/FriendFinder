@@ -38,7 +38,7 @@
 
                     <h3><strong>Question 1</strong></h3>
                     <label for="questions">You enjoy a hot cup of coffee on a cold day.</label>
-                    <select class="form-control" id="options">
+                    <select class="form-control" id="options1">
                         <option>1(Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
@@ -49,7 +49,7 @@
                     
                     <h3><strong>Question 2</strong></h3>
                     <label for="questions">Social situations give you anxiety.</label>
-                    <select class="form-control" id="options">
+                    <select class="form-control" id="options2">
                         <option>1(Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
@@ -60,7 +60,7 @@
 
                     <h3><strong>Question 3</strong></h3>
                     <label for="questions">The perfect weather for running is 60 degrees.</label>
-                    <select class="form-control" id="options">
+                    <select class="form-control" id="options3">
                         <option>1(Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
@@ -71,7 +71,7 @@
 
                     <h3><strong>Question 4</strong></h3>
                     <label for="questions">People watching at the airport(or anywhere, really) is entertaining.</label>
-                    <select class="form-control" id="options">
+                    <select class="form-control" id="options4">
                         <option>1(Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
@@ -82,7 +82,7 @@
 
                     <h3><strong>Question 5</strong></h3>
                     <label for="questions">You secretly enjoy listening to Taylor Swift.</label>
-                    <select class="form-control" id="options">
+                    <select class="form-control" id="options5">
                         <option>1(Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
@@ -90,6 +90,7 @@
                         <option>5(Strongly Agree)</option>
                     </select>
                     <br>
+
                 </div>
 
                 <button type="submit" class="btn btn-primary submit">Submit</button>
@@ -108,3 +109,45 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+ $(".submit").on("click", function(event) {
+    event.preventDefault();
+
+    // Here we grab the form elements
+    var newFriend = {
+      name: $("#name").val().trim(),
+      photo: $("#photo").val().trim(),
+      questions1: $("#options1").val().trim(),
+      questions2: $("#options2").val().trim(),
+      questions3: $("#options3").val().trim(),
+      questions4: $("#options4").val().trim(),
+      questions5: $("#options5").val().trim(),
+    };
+
+    console.log(newFriend);
+
+    $.post("/api/friends", newFriend,
+      function(data) {
+
+        //new friend added
+        if (data) {
+          alert("New friend added!");
+        }
+
+        // if something didnt' work
+        else {
+          alert("Didn't work.");
+        }
+
+        // Clear the form when submitting
+        $("#name").val("");
+        $("#photo").val("");
+        $("#options").val("");
+
+      });
+
+  });
+
+
+</script>
