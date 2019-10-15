@@ -124,15 +124,23 @@ function cleanUp(answer){
     event.preventDefault();
 
     // Here we grab the form elements
+     var questions1 = cleanUp($("#options1").val().trim());
+     var questions2 = cleanUp($("#options2").val().trim());
+     var questions3 = cleanUp($("#options3").val().trim());
+     var questions4 = cleanUp($("#options4").val().trim());
+     var questions5 = cleanUp($("#options5").val().trim());
+
+
     var newFriend = {
       name: $("#name").val().trim(),
       photo: $("#photo").val().trim(),
-      scores: [1, 2, 3],
-      questions1: cleanUp($("#options1").val().trim()),
-      questions2: cleanUp($("#options2").val().trim()),
-      questions3: cleanUp($("#options3").val().trim()),
-      questions4: cleanUp($("#options4").val().trim()),
-      questions5: cleanUp($("#options5").val().trim()),
+      scores: [
+          questions1, 
+          questions2, 
+          questions3,
+          questions4,
+          questions5
+        ]
     };
 
     console.log(newFriend);
